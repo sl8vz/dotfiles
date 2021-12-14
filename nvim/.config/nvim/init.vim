@@ -250,7 +250,7 @@ nmap <Leader>l :Commits<CR>
 nmap <Leader>G :Rg<CR>
 
 nmap <Leader>g : call MyGrep('<cword>')<CR>
-nmap <Leader>h : call MyGrepW('<cword>')<CR>
+nmap <Leader>y : call MyGrepW('<cword>')<CR>
 
 inoremap jj <esc>
 
