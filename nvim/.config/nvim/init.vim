@@ -270,6 +270,8 @@ imap  <c-d> <Plug>(completion_prev_source)
 
 nnoremap <leader>hd :SignifyHunkDiff<cr>
 nnoremap <leader>hu :SignifyHunkUndo<cr>
+nmap <leader>hn <plug>(signify-next-hunk)
+nmap <leader>hp <plug>(signify-prev-hunk)
 " }}}
 
 " Autocmds {{{
