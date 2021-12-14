@@ -27,5 +27,6 @@
 [core]
 	excludesfile = /home/seb/.gitignore_global
 	editor = vim
+	autocrlf = input
 [merge]
 	renameLimit = 40000
