@@ -78,6 +78,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'qpkorr/vim-bufkill'
 Plug 'npxbr/glow.nvim'
+Plug 'rhysd/vim-grammarous'
 "Colorschemes
 Plug 'tomasr/molokai'
 Plug 'w0ng/vim-hybrid'
