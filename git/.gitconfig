@@ -26,7 +26,7 @@
 	commitmsgwidth = 72
 [core]
 	excludesfile = /home/seb/.gitignore_global
-	editor = vim
+	editor = nvim
 	autocrlf = input
 [merge]
 	renameLimit = 40000
