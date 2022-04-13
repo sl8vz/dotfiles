@@ -50,6 +50,7 @@ lsp.clangd.setup{
 }
 --lsp.sumneko_lua.setup{on_attach=custom_attach, capabilities = capabilities}
 lsp.cmake.setup{on_attach=custom_attach, capabilities = capabilities}
+lsp.rust_analyzer.setup{on_attach=custom_attach, capabilities = capabilities}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
