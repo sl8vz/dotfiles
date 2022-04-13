@@ -39,6 +39,15 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 lsp.bashls.setup{on_attach=custom_attach, capabilities = capabilities}
 lsp.ccls.setup{on_attach=custom_attach, capabilities = capabilities}
+lsp.clangd.setup{
+  on_attach=custom_attach,
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--query-driver=/home/seb/toolchains/**/bin/arm-none-eabi-*"
+  }
+}
 --lsp.sumneko_lua.setup{on_attach=custom_attach, capabilities = capabilities}
 lsp.cmake.setup{on_attach=custom_attach, capabilities = capabilities}
 
