@@ -38,6 +38,7 @@ local lsp = require'lspconfig'
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lsp.bashls.setup{on_attach=custom_attach, capabilities = capabilities}
+lsp.pyright.setup{on_attach=custom_attach, capabilities = capabilities}
 lsp.ccls.setup{on_attach=custom_attach, capabilities = capabilities}
 lsp.clangd.setup{
   on_attach=custom_attach,
