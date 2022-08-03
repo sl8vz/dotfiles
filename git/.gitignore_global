@@ -7,3 +7,6 @@ compile_commands.json
 .ccls-cache/
 .cache
 pyrightconfig.json
+.pre-commit-config.yaml
+.python-version
+.idea
