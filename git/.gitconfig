@@ -9,6 +9,7 @@
 	co = checkout
 	ci = commit -s
 	cia = commit --amend
+	cic = commit --reset-author -c
 	autosquash = rebase -i HEAD~12 --autosquash
 	rb = rebase
 	rbc = rebase --continue
@@ -19,7 +20,7 @@
 [color]
 	ui = auto
 [web]
-	browser = chromium
+	browser = firefox
 [diff "zip"]
 	textconv = unzip -c -a
 [gui]
