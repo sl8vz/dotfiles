@@ -46,7 +46,10 @@ vim.keymap.set('n', '<F8>', '<cmd>TagbarToggle<CR>', { desc = 'Toggle [T]agbar' 
 
 -- Save
 vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', { desc = 'Save file' })
-vim.keymap.set('n', '<leader>z', '<cmd>BD<CR>', { desc = 'Close buffer' })
+
+-- Close buffer and windowj
+vim.keymap.set('n', '<leader>z', '<cmd>BufferClose<CR>', { desc = 'Close buffer' })
+vim.keymap.set('n', '<leader>c', '<cmd>close<CR>', { desc = 'Close window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
