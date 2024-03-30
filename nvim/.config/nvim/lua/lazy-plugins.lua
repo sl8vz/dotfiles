@@ -59,8 +59,7 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- modular approach: using `require 'path/name'` will
-  -- include a plugin definition from file lua/path/name.lua
+  {'nvim-lualine/lualine.nvim', config = function() require('lualine').setup{} end, dependencies = { 'nvim-tree/nvim-web-devicons' }},
 
   require 'plugins/debug',
   require 'plugins/indent_line',
