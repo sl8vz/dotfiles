@@ -21,8 +21,6 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 vim.keymap.set('n', '<left>', '<<', { desc = 'Shift line left' })
 vim.keymap.set('n', '<right>', '>>', { desc = 'Shift line right' })
-vim.keymap.set('n', '<up>', '[e', { desc = 'Shift up' })
-vim.keymap.set('n', '<down>', ']e', { desc = 'Shift down' })
 
 -- Keybinds to make split navigation easier.
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })

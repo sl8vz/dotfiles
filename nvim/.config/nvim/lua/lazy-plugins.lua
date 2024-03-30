@@ -8,12 +8,44 @@
 --  To update plugins you can run
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'github/copilot.vim', -- Copilot plugin
-  { 'preservim/tagbar', config = function() vim.g.tagbar_position = 'topleft vertical' end }, -- Display tags in a window
+  'tpope/vim-sleuth',      -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-unimpaired',
+  {
+    'fedepujol/move.nvim',
+    opts = {},
+    config = function()
+      require('move').setup {
+        line = {
+          enable = true, -- Enables line movement
+          indent = true  -- Toggles indentation
+        },
+        block = {
+          enable = true, -- Enables block movement
+          indent = true  -- Toggles indentation
+        },
+        word = {
+          enable = true, -- Enables word movement
+        },
+        char = {
+          enable = true -- Enables char movement
+        }
+      }
+
+      local opts = { noremap = true, silent = true }
+      -- Normal-mode commands
+      vim.keymap.set('n', '<Down>', ':MoveLine(1)<CR>', opts)
+      vim.keymap.set('n', '<Up>', ':MoveLine(-1)<CR>', opts)
+
+      -- Visual-mode commands
+      vim.keymap.set('v', '<Down>', ':MoveBlock(1)<CR>', opts)
+      vim.keymap.set('v', '<Up>', ':MoveBlock(-1)<CR>', opts)
+      vim.keymap.set('v', '<Left>', ':MoveHBlock(-1)<CR>', opts)
+      vim.keymap.set('v', '<Right>', ':MoveHBlock(1)<CR>', opts)
+    end
+  },
+  'github/copilot.vim',
+  { 'preservim/tagbar',      config = function() vim.g.tagbar_position = 'topleft vertical' end }, -- Display tags in a window
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -34,7 +66,7 @@ require('lazy').setup({
   require 'plugins/indent_line',
   require 'plugins/lint',
   require 'plugins/cmp',
-  require 'plugins/conform',
+  --  require 'plugins/conform',
   require 'plugins/filetree',
   require 'plugins/gitsigns',
   require 'plugins/gruvbox',
