@@ -9,7 +9,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -49,6 +49,12 @@ vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', { desc = 'Save file' })
 vim.keymap.set('n', '<leader>z', '<cmd>BufferClose<CR>', { desc = 'Close buffer' })
 vim.keymap.set('n', '<leader>c', '<cmd>close<CR>', { desc = 'Close window' })
 
+-- Toggle QuickFix
+vim.keymap.set('n', '<F1>', '<cmd>lua ToggleQuickFix()<CR>', { desc = 'Toggle [Q]uickFix' })
+
+-- Toggle Loclist
+vim.keymap.set('n', '<F2>', '<cmd>lua ToggleLocList()<CR>', { desc = 'Toggle [L]oclist' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -63,4 +69,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+function ToggleQuickFix()
+	if vim.fn.empty(vim.fn.filter(vim.fn.getwininfo(), "v:val.quickfix")) == 1 then
+		vim.cmd([[copen]])
+	else
+		vim.cmd([[cclose]])
+	end
+end
+
+function ToggleLocList()
+  if vim.fn.empty(vim.fn.filter(vim.fn.getwininfo(), "v:val.loclist")) == 1 then
+    vim.cmd([[lopen]])
+  else
+    vim.cmd([[lclose]])
+  end
+end
 -- vim: ts=2 sts=2 sw=2 et
