@@ -1,4 +1,3 @@
-
 return {
   "nvim-lualine/lualine.nvim",
   version = "*",
@@ -8,6 +7,9 @@ return {
   },
   config = function()
     require("lualine").setup {
+      options = {
+        globalstatus = true,
+      },
       sections = {
         lualine_c = {
           {
