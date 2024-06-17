@@ -4,9 +4,9 @@ require('lazy').setup({
   'github/copilot.vim',
   { 'preservim/tagbar',      config = function() vim.g.tagbar_position = 'topleft vertical' end }, -- Display tags in a window
   { 'numToStr/Comment.nvim', opts = {} },
+  { 'FabijanZulj/blame.nvim', config = function() require("blame").setup() end, vim.keymap.set('n', '<F7>', ':BlameToggle<CR>', { desc = 'Toggle blame' })},
 
   require 'plugins/cmp',
-  require 'plugins/debug',
   require 'plugins/filetree',
   require 'plugins/gitsigns',
   require 'plugins/gruvbox',
