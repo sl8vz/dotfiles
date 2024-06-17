@@ -69,6 +69,32 @@ return {
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+          -- Toggle inlay hints
+          map('<F5>', function ()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+            --vim.g.inlay_hints = vim.lsp.inlay_hint.is_enabled()
+          end, ' Toggle inlay hints')
+
+          -- Default
+          vim.lsp.inlay_hint.enable(true)
+          vim.g.inlay_hints = true
+
+          -- Autocmd to disable inlay_hint when entering insert mode
+          vim.api.nvim_create_autocmd('InsertEnter', {
+            callback = function()
+              vim.lsp.inlay_hint.enable(false)
+            end,
+          })
+
+          -- Autocmd to enable inlay_hint when leaving insert mode
+          vim.api.nvim_create_autocmd('InsertLeave', {
+            callback = function()
+              if vim.g.inlay_hints then
+                vim.lsp.inlay_hint.enable(true)
+              end
+            end,
+          })
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
