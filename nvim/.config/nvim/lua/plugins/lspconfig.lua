@@ -72,12 +72,12 @@ return {
           -- Toggle inlay hints
           map('<F5>', function ()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            --vim.g.inlay_hints = vim.lsp.inlay_hint.is_enabled()
+            vim.g.inlay_hints = vim.lsp.inlay_hint.is_enabled()
           end, ' Toggle inlay hints')
 
           -- Default
-          vim.lsp.inlay_hint.enable(true)
-          vim.g.inlay_hints = true
+          vim.lsp.inlay_hint.enable(false)
+          vim.g.inlay_hints = false
 
           -- Autocmd to disable inlay_hint when entering insert mode
           vim.api.nvim_create_autocmd('InsertEnter', {
