@@ -1,5 +1,5 @@
 [user]
-	email =
+	email = 
 	name = Sebastien Laveze
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
