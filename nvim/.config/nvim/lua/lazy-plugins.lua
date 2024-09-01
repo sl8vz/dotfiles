@@ -18,6 +18,7 @@ require('lazy').setup({
   require 'plugins/move',
   require 'plugins/telescope',
   require 'plugins/todo-comments',
+  require 'plugins/tmux',
   require 'plugins/treesitter',
   require 'plugins/which-key',
 }, {
