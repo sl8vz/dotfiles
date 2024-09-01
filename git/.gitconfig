@@ -31,3 +31,9 @@
 	autocrlf = input
 [merge]
 	renameLimit = 40000
+[sendemail.linux]
+	tocmd ="`pwd`/scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats --nol"
+	cccmd ="`pwd`/scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats --nom"
+[sendemail.buildroot]
+	to = buildroot@buildroot.org
+	ccCmd = "$(pwd)/utils/get-developers -e"
