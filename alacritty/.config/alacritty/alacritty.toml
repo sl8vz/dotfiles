@@ -20,3 +20,8 @@ style = "Italic"
 [font.normal]
 family = "UbuntuMono Nerd Font"
 style = "Regular"
+
+[window]
+decorations = "None"
+startup_mode = "Maximized"
+
