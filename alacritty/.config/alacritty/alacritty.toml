@@ -2,6 +2,9 @@ import = [
    "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
+[shell]
+program = "/usr/bin/fish"
+
 [font]
 size = 12.0
 
