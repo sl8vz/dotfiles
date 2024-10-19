@@ -84,4 +84,15 @@ function ToggleLocList()
     vim.cmd([[lclose]])
   end
 end
+
+-- Reload files autocommand on autofocus, write, and BufWinEnter
+vim.api.nvim_create_autocmd({'FocusGained','BufEnter','CursorHold','CursorHoldI'}, {
+  desc = 'Reload files autocommand',
+  group = vim.api.nvim_create_augroup('kickstart-reload-files', { clear = true }),
+  pattern = '*',
+  callback = function()
+    vim.cmd([[checktime]])
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
