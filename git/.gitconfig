@@ -1,6 +1,7 @@
 [user]
 	email = 
 	name = Sebastien Laveze
+	signingKey = AD1F5542ACB36E2AE35C8B058B904B8196DC4AC7
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = log --stat
@@ -17,6 +18,8 @@
 	rhh = reset HEAD --hard
 	st = status
 	cp = cherry-pick
+[commit]
+	gpgSign = true
 [color]
 	ui = auto
 [web]
