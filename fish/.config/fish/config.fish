@@ -4,6 +4,7 @@ end
 
 starship init fish | source
 fzf --fish | source
+pyenv init - | source
 
 # Abbreviations
 abbr --add ls lsd
@@ -15,5 +16,4 @@ abbr --add g git
 set -gx BR2_DL_DIR ~/dev/br_dl/
 set -gx BR2_CCACHE_DIR ~/dev/br_ccache/
 set -gx BR2_USE_CCACHE 1
-
 set -gx SHELLCHECK_OPTS '--enable=all --severity=style'
