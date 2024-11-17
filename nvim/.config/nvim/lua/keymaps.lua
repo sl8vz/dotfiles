@@ -55,6 +55,9 @@ vim.keymap.set('n', '<F1>', '<cmd>lua ToggleQuickFix()<CR>', { desc = 'Toggle [Q
 -- Toggle Loclist
 vim.keymap.set('n', '<F2>', '<cmd>lua ToggleLocList()<CR>', { desc = 'Toggle [L]oclist' })
 
+-- Unmap s
+vim.keymap.set('n', 's', '<Nop>', { desc = 'Unmap s' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
