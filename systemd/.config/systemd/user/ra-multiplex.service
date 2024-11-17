@@ -1,0 +1,8 @@
+[Unit]
+Description=Rust Analyzer Multiplex
+
+[Service]
+ExecStart=/home/seb/.cargo/bin/ra-multiplex server
+
+[Install]
+WantedBy=default.target
