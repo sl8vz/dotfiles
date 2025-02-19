@@ -18,6 +18,7 @@
 	rhh = reset HEAD --hard
 	st = status
 	cp = cherry-pick
+	w = worktree
 [commit]
 	gpgSign = true
 [color]
