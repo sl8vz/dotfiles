@@ -8,6 +8,7 @@ require('lazy').setup({
   { 'mrcjkb/rustaceanvim', version = '^5', lazy = false},
   { 'catppuccin/nvim', name = "catppuccin", priority = 1000, init = function () vim.cmd.colorscheme('catppuccin')  end },
   require 'plugins/cmp',
+  require 'plugins/code_companion',
   require 'plugins/filetree',
   require 'plugins/gitsigns',
   require 'plugins/indent_line',
