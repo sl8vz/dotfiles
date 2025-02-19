@@ -55,6 +55,10 @@ vim.keymap.set('n', '<F1>', '<cmd>lua ToggleQuickFix()<CR>', { desc = 'Toggle [Q
 -- Toggle Loclist
 vim.keymap.set('n', '<F2>', '<cmd>lua ToggleLocList()<CR>', { desc = 'Toggle [L]oclist' })
 
+-- Toggle Copilot
+vim.g.copilot_enabled = true
+vim.keymap.set('n', '<F3>', '<cmd>lua ToggleCopilot()<CR>', { desc = 'Toggle [C]opilot' })
+
 -- Unmap s
 vim.keymap.set('n', 's', '<Nop>', { desc = 'Unmap s' })
 
@@ -85,6 +89,20 @@ function ToggleLocList()
     vim.cmd([[lopen]])
   else
     vim.cmd([[lclose]])
+  end
+end
+
+-- Function to toggle copilot (stores current state in global var)
+function ToggleCopilot()
+
+  if not vim.g.copilot_enabled then
+    vim.cmd([[Copilot enable]])
+    vim.notify('Copilot enabled', 'info', { title = 'Copilot' })
+    vim.g.copilot_enabled = true
+  else
+    vim.cmd([[Copilot disable]])
+    vim.notify('Copilot disabled', 'info', { title = 'Copilot' })
+    vim.g.copilot_enabled = false
   end
 end
 
