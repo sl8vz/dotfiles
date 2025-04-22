@@ -17,3 +17,4 @@ set -gx BR2_DL_DIR ~/dev/br_dl/
 set -gx BR2_CCACHE_DIR ~/dev/br_ccache/
 set -gx BR2_USE_CCACHE 1
 set -gx SHELLCHECK_OPTS '--enable=all --severity=style'
+set --universal nvm_default_version v22.14.0
