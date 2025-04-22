@@ -5,7 +5,6 @@ require('lazy').setup({
   { 'preservim/tagbar',      config = function() vim.g.tagbar_position = 'topleft vertical' end }, -- Display tags in a window
   { 'numToStr/Comment.nvim', opts = {} },
   { 'FabijanZulj/blame.nvim', config = function() require("blame").setup() end, vim.keymap.set('n', '<F7>', ':BlameToggle<CR>', { desc = 'Toggle blame' })},
-  { 'mrcjkb/rustaceanvim', version = '^5', lazy = false},
   { 'catppuccin/nvim', name = "catppuccin", priority = 1000, init = function () vim.cmd.colorscheme('catppuccin')  end },
   require 'plugins/cmp',
   require 'plugins/code_companion',
@@ -17,6 +16,7 @@ require('lazy').setup({
   require 'plugins/lualine',
   require 'plugins/mini',
   require 'plugins/move',
+  require 'plugins/rustacean',
   require 'plugins/telescope',
   require 'plugins/todo-comments',
   require 'plugins/tmux',
