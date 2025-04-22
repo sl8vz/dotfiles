@@ -57,7 +57,10 @@ vim.keymap.set('n', '<F2>', '<cmd>lua ToggleLocList()<CR>', { desc = 'Toggle [L]
 
 -- Toggle Copilot
 vim.g.copilot_enabled = true
-vim.keymap.set('n', '<F3>', '<cmd>lua ToggleCopilot()<CR>', { desc = 'Toggle [C]opilot' })
+vim.keymap.set('n', '<F11>', '<cmd>lua ToggleCopilot()<CR>', { desc = 'Toggle [C]opilot' })
+
+--Togle CompanionChat
+vim.keymap.set('n', '<F12>', '<cmd>CodeCompanionChat Toggle<CR>', { desc = 'Toggle CompanionChat' })
 
 -- Unmap s
 vim.keymap.set('n', 's', '<Nop>', { desc = 'Unmap s' })
