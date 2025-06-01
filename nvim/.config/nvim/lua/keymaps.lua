@@ -63,7 +63,7 @@ vim.keymap.set('n', '<F11>', '<cmd>lua ToggleCopilot()<CR>', { desc = 'Toggle [C
 vim.keymap.set('n', '<F12>', '<cmd>CodeCompanionChat Toggle<CR>', { desc = 'Toggle CompanionChat' })
 
 -- Unmap s
-vim.keymap.set('n', 's', '<Nop>', { desc = 'Unmap s' })
+vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -116,6 +116,13 @@ vim.api.nvim_create_autocmd({'FocusGained','BufEnter','CursorHold','CursorHoldI'
   pattern = '*',
   callback = function()
     vim.cmd([[checktime]])
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.gitlab-ci*.{yml,yaml}",
+  callback = function()
+    vim.bo.filetype = "yaml.gitlab"
   end,
 })
 
