@@ -175,12 +175,6 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-
-      -- Do not let Mason handle the `rust_analyzer` server
-      require('mason-lspconfig').setup_handlers {
-         ['rust_analyzer'] = function() end,
-      }
-
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
@@ -192,6 +186,12 @@ return {
             require('lspconfig')[server_name].setup(server)
           end,
         },
+        -- Do not let Mason handle the `rust_analyzer` server
+        automatic_enable = {
+          exclude = {
+            "rust_analyzer",
+          }
+        }
       }
     end,
   },
