@@ -6,7 +6,6 @@ require('lazy').setup({
   { 'FabijanZulj/blame.nvim', config = function() require("blame").setup() end, vim.keymap.set('n', '<F7>', ':BlameToggle<CR>', { desc = 'Toggle blame' })},
   { 'catppuccin/nvim', name = "catppuccin", priority = 1000, init = function () vim.cmd.colorscheme('catppuccin')  end },
   require 'plugins/blink_cmp',
-  require 'plugins/code_companion',
   require 'plugins/copilot',
   require 'plugins/filetree',
   require 'plugins/gitsigns',
