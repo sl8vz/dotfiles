@@ -22,9 +22,6 @@ return {
           ignore_whitespace = true,
           virt_text_priority = 100,
         },
-        current_line_blame_formatter_opts = {
-          relative_time = true,
-        },
       }
 
       vim.keymap.set('n', '<leader>hn', ':Gitsigns next_hunk<cr>', { desc = 'Next git hunk' })
