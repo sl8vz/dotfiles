@@ -19,6 +19,8 @@
 	st = status
 	cp = cherry-pick
 	w = worktree
+	ph = push origin HEAD
+	phf = push --force-with-lease origin HEAD
 [commit]
 	gpgSign = true
 [color]
@@ -41,3 +43,5 @@
 [sendemail.buildroot]
 	to = buildroot@buildroot.org
 	ccCmd = "$(pwd)/utils/get-developers -e"
+[coderabbit]
+	machineId = cli/7c2bceeaac724f358cd5b77153bc9f45
